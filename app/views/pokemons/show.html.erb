@@ -1,16 +1,19 @@
 <h1><%= @pokemon.number %> - <%= @pokemon.name %></h1>
+<%= link_to 'Edit Pokemon', edit_pokemon_path(@pokemon) %>
+<%= link_to 'Back to list', pokemons_path %>
 <ul>
-<li>Attack: <%= @pokemon.attack %></li>
-<li>Type: <%= @pokemon.type_1 %></li>
-<% if @pokemon.type_2 != ""%>
-    <li>Type (2): <%= @pokemon.type_2 %></li>
-<% end %>
-<li>Total: <%= @pokemon.attack %></li>
-<li>HP: <%= @pokemon.attack %></li>
-<li>Attack: <%= @pokemon.attack %></li>
-<li>Defense: <%= @pokemon.attack %></li>
-<li>Special Attack: <%= @pokemon.attack %></li>
-<li>Special Defense: <%= @pokemon.attack %></li>
-<li>Generation: <%= @pokemon.attack %></li>
-<li>Legendary: <%= @pokemon.attack %></li>
+    <li>Attack: <%= @pokemon.attack %></li>
+    <li>Type: <%= @pokemon.type_1 %></li>
+    <% if @pokemon.type_2 != ""%>
+        <li>Type (2): <%= @pokemon.type_2 %></li>
+    <% end %>
+    <li>Total: <%= @pokemon.total %></li>
+    <li>HP: <%= @pokemon.hp %></li>
+    <li>Attack: <%= @pokemon.attack %></li>
+    <li>Defence: <%= @pokemon.defence %></li>
+    <li>Special Attack: <%= @pokemon.sp_atk %></li>
+    <li>Special Defense: <%= @pokemon.sp_def %></li>
+    <li>Speed: <%= @pokemon.speed %></li>
+    <li>Generation: <%= @pokemon.generation %></li>
+    <li>Legendary: <%= @pokemon.legendary %></li>
 </ul>

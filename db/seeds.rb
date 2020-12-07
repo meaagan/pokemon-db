@@ -20,7 +20,7 @@ CSV.foreach(filepath, csv_options) do |row|
         total: "#{row['Total']}", 
         hp: "#{row['HP']}", 
         attack: "#{row['Attack']}", 
-        defence: "#{row['Defence']}", 
+        defense: "#{row['Defense']}", 
         sp_atk: "#{row['Sp. Atk']}", 
         sp_def:"#{row['Sp. Def']}", 
         speed:"#{row['Speed']}",
