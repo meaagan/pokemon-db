@@ -1,6 +1,5 @@
-<h1>This is pokemon index</h1>
 <ul>
     <% @pokemon.each do |pokemon|%>
-        <li><%= pokemon.name %></li>
+        <li><%= pokemon.name %> - <%= link_to 'More Info', pokemon_path(pokemon) %></li>
     <% end %>
 </ul>

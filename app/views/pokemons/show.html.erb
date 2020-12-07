@@ -1,1 +1,16 @@
-<h1>This is pokemon show for <%= @pokemon.name %></h1>
+<h1><%= @pokemon.number %> - <%= @pokemon.name %></h1>
+<ul>
+<li>Attack: <%= @pokemon.attack %></li>
+<li>Type: <%= @pokemon.type_1 %></li>
+<% if @pokemon.type_2 != ""%>
+    <li>Type (2): <%= @pokemon.type_2 %></li>
+<% end %>
+<li>Total: <%= @pokemon.attack %></li>
+<li>HP: <%= @pokemon.attack %></li>
+<li>Attack: <%= @pokemon.attack %></li>
+<li>Defense: <%= @pokemon.attack %></li>
+<li>Special Attack: <%= @pokemon.attack %></li>
+<li>Special Defense: <%= @pokemon.attack %></li>
+<li>Generation: <%= @pokemon.attack %></li>
+<li>Legendary: <%= @pokemon.attack %></li>
+</ul>
