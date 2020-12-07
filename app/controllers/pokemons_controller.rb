@@ -9,6 +9,8 @@ class PokemonsController < ApplicationController
 
     def create 
         @pokemon = Pokemon.new(pokemon_params)
+
+        @pokemon.number = Pokemon.last.number.to_i + 1
         
         if @pokemon.save!
             redirect_to pokemon_path(@pokemon)
