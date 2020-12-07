@@ -3,6 +3,8 @@ Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/ra
 #To run:
 Fork/clone project and run 
 ```rails db:migrate db:seed```
+
 To start the server, run 
 ```rails s```
+
 and open localhost:3000 in your browser.
