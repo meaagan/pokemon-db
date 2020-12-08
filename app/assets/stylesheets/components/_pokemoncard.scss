@@ -1,6 +1,6 @@
 .pokemon-card {
-    width: 509px;
-    height:700px;
+    width: 400px;
+    height:600px;
     background-color: #f3d015;
     margin: 0 auto;
     display: flex;
@@ -10,9 +10,12 @@
 }
 
 .pokemon-inner-card {
-    width: 459px;
-    height: 650px;
-    background-color: green;
+    width: 350px;
+    height: 550px;
+    background-image: 
+        linear-gradient(90deg, rgb(51,87,158) 35%, rgb(51,87,158) 100%),
+        url(https://i.imgur.com/x7L9qpC.png);
+    background-blend-mode: hue;
     padding: 25px;
 
     .header {
@@ -24,7 +27,7 @@
 .pokemon-image {
     height: 40%;
     width: 100%;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(255,255,255,0.5);
     display:flex;
     justify-content: center;
 }

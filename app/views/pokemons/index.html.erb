@@ -1,5 +1,7 @@
 <ul>
     <% @pokemon.each do |pokemon|%>
-        <li><%= pokemon.name %> - <%= link_to 'More Info', pokemon_path(pokemon) %></li>
+        <li><%= link_to "#{pokemon.name}", pokemon_path(pokemon) %></li>
     <% end %>
 </ul>
+
+<%= will_paginate @pokemon %>

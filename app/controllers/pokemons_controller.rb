@@ -3,19 +3,24 @@ require 'open-uri'
 
 class PokemonsController < ApplicationController
     def index
-        @pokemon = Pokemon.all
+        @pokemon = Pokemon.paginate(page: params[:page])
     end    
 
     def show
         @pokemon = Pokemon.find(params[:id])
 
         url = "https://pokeapi.co/api/v2/pokemon/#{@pokemon.name.downcase}"
+
+        if url.include?" "
+            url = "https://pokeapi.co/api/v2/pokemon/ditto"
+        end
+        
         open_url = open(url).read
         url_parsed = JSON.parse(open_url)
         @pokemon_image = url_parsed["sprites"]["other"]["official-artwork"]["front_default"]
 
         if @pokemon.legendary == true
-            return "Legendary"
+            "Legendary"
         else
             "Basic"
         end
@@ -43,6 +48,13 @@ class PokemonsController < ApplicationController
 
     def update 
         @pokemon = Pokemon.find(params[:id])
+        @pokemon.update(pokemon_params)
+
+        if @pokemon.save!
+            redirect_to pokemon_path(@pokemon)
+        else
+            render :edit
+        end
     end
 
 

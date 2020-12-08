@@ -25,7 +25,7 @@ CSV.foreach(filepath, csv_options) do |row|
         sp_def:row['Sp. Def'], 
         speed:row['Speed'],
         generation: row['Generation'],
-        legendary: row['Legendary']
+        legendary: row['Legendary'].downcase
     )
 
     puts "Created #{row['Name']}"
