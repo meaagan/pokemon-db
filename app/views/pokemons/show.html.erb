@@ -1,19 +1,60 @@
 <h1><%= @pokemon.number %> - <%= @pokemon.name %></h1>
 <%= link_to 'Edit Pokemon', edit_pokemon_path(@pokemon) %>
 <%= link_to 'Back to list', pokemons_path %>
-<ul>
-    <li>Attack: <%= @pokemon.attack %></li>
-    <li>Type: <%= @pokemon.type_1 %></li>
-    <% if @pokemon.type_2 != ""%>
-        <li>Type (2): <%= @pokemon.type_2 %></li>
-    <% end %>
-    <li>Total: <%= @pokemon.total %></li>
-    <li>HP: <%= @pokemon.hp %></li>
-    <li>Attack: <%= @pokemon.attack %></li>
-    <li>Defense: <%= @pokemon.defense %></li>
-    <li>Special Attack: <%= @pokemon.sp_atk %></li>
-    <li>Special Defense: <%= @pokemon.sp_def %></li>
-    <li>Speed: <%= @pokemon.speed %></li>
-    <li>Generation: <%= @pokemon.generation %></li>
-    <li>Legendary: <%= @pokemon.legendary %></li>
-</ul>
+
+ 
+<div class="pokemon-card">
+    <div class="pokemon-inner-card">
+        <div>
+            <h4>
+                <% if @pokemon.legendary == true %>
+                    Legendary
+                <% else %>
+                    Basic
+                <% end %>
+            </h4>
+        </div>
+        <div class="header">
+            <h3><%= @pokemon.name %></h3>
+            <p><%= @pokemon.hp %> HP</p>
+        </div>
+        <div class="pokemon-image">
+            <img src=<%= @pokemon_image %> width="250px">
+        </div>
+        <div class="pokemon-image-footer">
+            <span><%= @pokemon.type_1 %>
+            <% if @pokemon.type_2 != ""%>
+                 | <%= @pokemon.type_2 %></span>
+            <% else %>
+                </span>
+            <% end %>
+            <span>Generation: <%= @pokemon.generation %></span>
+        </div>
+        <table class="table">
+            <tr>
+            <td>Attack</td>
+            <td><%= @pokemon.attack %></td>
+            </tr>
+            <tr>
+            <td>Defense </td>
+            <td><%= @pokemon.defense %></td>
+            </tr>
+            <tr>
+            <td>Special Attack</td>
+            <td><%= @pokemon.sp_atk %></td>
+            </tr>
+            <tr>
+            <td>Special Defense</td>
+            <td><%= @pokemon.sp_def %></td>
+            </tr>
+            <tr>
+            <td>Speed</td>
+            <td><%= @pokemon.speed %></td>
+            </tr>
+            <tr>
+            <td>Total</td>
+            <td><%= @pokemon.total %></td>
+            </tr>
+        </table>
+    </div>
+</div>

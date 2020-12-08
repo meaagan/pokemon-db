@@ -1,3 +1,6 @@
+require 'json'
+require 'open-uri'
+
 class PokemonsController < ApplicationController
     def index
         @pokemon = Pokemon.all
@@ -5,6 +8,17 @@ class PokemonsController < ApplicationController
 
     def show
         @pokemon = Pokemon.find(params[:id])
+
+        url = "https://pokeapi.co/api/v2/pokemon/#{@pokemon.name.downcase}"
+        open_url = open(url).read
+        url_parsed = JSON.parse(open_url)
+        @pokemon_image = url_parsed["sprites"]["other"]["official-artwork"]["front_default"]
+
+        if @pokemon.legendary == true
+            return "Legendary"
+        else
+            "Basic"
+        end
     end
 
     def create 
