@@ -1,6 +1,19 @@
-<ul>
     <% @pokemon.each do |pokemon|%>
-        <li><%= link_to "#{pokemon.name}", pokemon_path(pokemon) %></li>
+        <div class="card-product">
+            <div class="card-product-infos">
+                <h2><%= link_to "#{pokemon.name}", pokemon_path(pokemon) %></h2>
+                <p>
+                    <span><%= pokemon.type_1 %> | </span>
+                    <span>
+                        <% if pokemon.legendary %>
+                            Legendary
+                        <% else %>
+                            Basic
+                        <% end %>
+                    </span>
+                </p>
+            </div>
+        </div>
     <% end %>
 </ul>
 

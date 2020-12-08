@@ -27,7 +27,6 @@ CSV.foreach(filepath, csv_options) do |row|
         generation: row['Generation'],
         legendary: row['Legendary'].downcase
     )
-
     puts "Created #{row['Name']}"
 end
 
