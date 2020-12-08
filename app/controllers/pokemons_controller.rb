@@ -11,7 +11,9 @@ class PokemonsController < ApplicationController
 
         url = "https://pokeapi.co/api/v2/pokemon/#{@pokemon.name.downcase}"
 
-        if url.include?" "
+        if url.include?" " 
+            url = "https://pokeapi.co/api/v2/pokemon/ditto"
+        elsif @pokemon.number > 721
             url = "https://pokeapi.co/api/v2/pokemon/ditto"
         end
         
