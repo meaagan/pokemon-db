@@ -1,20 +1,29 @@
-    <% @pokemon.each do |pokemon|%>
-        <div class="card-product">
-            <div class="card-product-infos">
-                <h2><%= link_to "#{pokemon.name}", pokemon_path(pokemon) %></h2>
-                <p>
-                    <span><%= pokemon.type_1 %> | </span>
-                    <span>
-                        <% if pokemon.legendary == "True" %>
-                            Legendary
-                        <% else %>
-                            Basic
-                        <% end %>
-                    </span>
-                </p>
-            </div>
-        </div>
-    <% end %>
+<h3>Sort by</h3>
+<ul>
+    <li><%= link_to 'Sort by name', pokemons_path(:sort_param => "name"), class: "btn btn-ghost" %></li>
+    <li><%= link_to 'Sort by number', pokemons_path(:sort_param => "number"), class: "btn btn-ghost" %></li>
+    <li><%= link_to 'Sort by attack', pokemons_path(:sort_param => "attack"), class: "btn btn-ghost" %></li>
+    <li><%= link_to 'Sort by defense', pokemons_path(:sort_param => "defense"), class: "btn btn-ghost" %></li>
+    <li><%= link_to 'Sort by speed', pokemons_path(:sort_param => "speed"), class: "btn btn-ghost" %></li>
+    <li><%= link_to 'Sort by total', pokemons_path(:sort_param => "total"), class: "btn btn-ghost" %></li>
+    <li><%= link_to 'Sort by type', pokemons_path(:sort_param => "type_1"), class: "btn btn-ghost" %></li>
 </ul>
+<% @pokemon.each do |pokemon|%>
+    <div class="card-product">
+        <div class="card-product-infos">
+            <h2><%= link_to "#{pokemon.name}", pokemon_path(pokemon) %></h2>
+            <p>
+                <span><%= pokemon.type_1 %> | </span>
+                <span>
+                    <% if pokemon.legendary == "True" %>
+                        Legendary
+                    <% else %>
+                        Basic
+                    <% end %>
+                </span>
+            </p>
+        </div>
+    </div>
+<% end %>
 
 <%= will_paginate @pokemon %>

@@ -3,7 +3,7 @@ require 'open-uri'
 
 class PokemonsController < ApplicationController
     def index
-        @pokemon = Pokemon.paginate(page: params[:page], per_page: 5)
+        @pokemon = Pokemon.paginate(page: params[:page], per_page: 5).order(params[:sort_param])
     end    
 
     def show
