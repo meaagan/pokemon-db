@@ -1,16 +1,25 @@
+<div class="simple-form">
 <h1>New Pokemon</h1>
-<%= simple_form_for @pokemon do |f| %>
+    <%= simple_form_for @pokemon do |f| %>
     <%= f.input :name, label: "Name" %>
-    <%= f.input :type_1, collection: ["Normal","Fighting","Flying","Poison","Ground","Rock","Bug","Ghost","Steel","Fire","Water","Grass","Electric","Psychic","Ice","Dragon","Dark","Fairy"] %>
-    <%= f.input :type_2, collection: ["Normal","Fighting","Flying","Poison","Ground","Rock","Bug","Ghost","Steel","Fire","Water","Grass","Electric","Psychic","Ice","Dragon","Dark","Fairy"] %>
-    <%= f.input :total, as: :numeric, label: "Total" %>
-    <%= f.input :hp, as: :numeric, label: "HP" %>
-    <%= f.input :attack, as: :numeric, label: "Attack" %>
-    <%= f.input :defense, as: :numeric, label: "Defense" %>
-    <%= f.input :sp_atk, as: :numeric, label: "Special Attack" %>
-    <%= f.input :sp_def, as: :numeric, label: "Special Defense" %>
-    <%= f.input :speed, as: :numeric, label: "speed" %>
+    <div style="display: flex;">
+        <%= f.input :type_1, collection: ["Normal","Fighting","Flying","Poison","Ground","Rock","Bug","Ghost","Steel","Fire","Water","Grass","Electric","Psychic","Ice","Dragon","Dark","Fairy"] %>
+        <%= f.input :type_2, collection: ["Normal","Fighting","Flying","Poison","Ground","Rock","Bug","Ghost","Steel","Fire","Water","Grass","Electric","Psychic","Ice","Dragon","Dark","Fairy"] %>
+    </div>
+    <div style="display: flex;">
+        <%= f.input :hp, as: :numeric, label: "HP" %>
+        <%= f.input :speed, as: :numeric, label: "Speed" %>
+    </div>
+    <div style="display: flex;">
+        <%= f.input :attack, as: :numeric, label: "Attack" %>
+        <%= f.input :defense, as: :numeric, label: "Defense" %>
+    </div>
+    <div style="display: flex;">
+        <%= f.input :sp_atk, as: :numeric, label: "Special Attack" %>
+        <%= f.input :sp_def, as: :numeric, label: "Special Defense" %>
+    </div>
     <%= f.input :generation, as: :numeric, label: "Generation" %>
     <%= f.input :legendary, as: :boolean %>
     <%= f.submit "Add Pokemon" %>
-<% end %>
+    <% end %>
+</div>

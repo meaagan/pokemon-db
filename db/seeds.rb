@@ -13,19 +13,19 @@ csv_options = { col_sep: ',', headers: :first_row }
 puts "Starting Seed..."
 CSV.foreach(filepath, csv_options) do |row|
     Pokemon.create(
-        number: row['#'],
+        number: row['#'].to_i,
         name: "#{row['Name']}",
         type_1:  "#{row['Type 1']}", 
         type_2: "#{row['Type 2']}", 
-        total: row['Total'], 
-        hp: row['HP'], 
-        attack: row['Attack'], 
-        defense: row['Defense'], 
-        sp_atk: row['Sp. Atk'], 
-        sp_def:row['Sp. Def'], 
-        speed:row['Speed'],
-        generation: row['Generation'],
-        legendary: row['Legendary'].downcase
+        total: row['Total'].to_i, 
+        hp: row['HP'].to_i, 
+        attack: row['Attack'].to_i, 
+        defense: row['Defense'].to_i, 
+        sp_atk: row['Sp. Atk'].to_i, 
+        sp_def:row['Sp. Def'].to_i, 
+        speed:row['Speed'].to_i,
+        generation: row['Generation'].to_i,
+        legendary: row['Legendary']
     )
     puts "Created #{row['Name']}"
 end

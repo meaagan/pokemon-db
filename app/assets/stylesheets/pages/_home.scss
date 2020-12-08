@@ -1,1 +1,20 @@
 // Specific CSS for your home-page
+.homepage-container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+}
+
+.intro {
+    width: 50%;
+}
+
+.simple-form {
+    margin: 60px 0px 50px 0px;
+}
+
+.form-group {
+    width:100% !important;
+    margin: 15px;
+}

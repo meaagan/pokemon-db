@@ -19,7 +19,7 @@ class PokemonsController < ApplicationController
         url_parsed = JSON.parse(open_url)
         @pokemon_image = url_parsed["sprites"]["other"]["official-artwork"]["front_default"]
 
-        if @pokemon.legendary == true
+        if @pokemon.legendary
             "Legendary"
         else
             "Basic"
@@ -29,6 +29,7 @@ class PokemonsController < ApplicationController
     def create 
         @pokemon = Pokemon.new(pokemon_params)
 
+        @pokemon.total = @pokemon.hp.to_i + @pokemon.attack.to_i + @pokemon.defense.to_i + @pokemon.sp_atk.to_i + @pokemon.sp_def.to_i + @pokemon.speed.to_i
         @pokemon.number = Pokemon.last.number.to_i + 1
         
         if @pokemon.save!
@@ -40,15 +41,18 @@ class PokemonsController < ApplicationController
 
     def new
         @pokemon = Pokemon.new
+        @pokemon.total = @pokemon.hp.to_i + @pokemon.attack.to_i + @pokemon.defense.to_i + @pokemon.sp_atk.to_i + @pokemon.sp_def.to_i + @pokemon.speed.to_i
     end
 
     def edit
         @pokemon = Pokemon.find(params[:id])
+        @pokemon.total = @pokemon.hp.to_i + @pokemon.attack.to_i + @pokemon.defense.to_i + @pokemon.sp_atk.to_i + @pokemon.sp_def.to_i + @pokemon.speed.to_i
     end
 
     def update 
         @pokemon = Pokemon.find(params[:id])
         @pokemon.update(pokemon_params)
+        @pokemon.total = @pokemon.hp.to_i + @pokemon.attack.to_i + @pokemon.defense.to_i + @pokemon.sp_atk.to_i + @pokemon.sp_def.to_i + @pokemon.speed.to_i
 
         if @pokemon.save!
             redirect_to pokemon_path(@pokemon)
