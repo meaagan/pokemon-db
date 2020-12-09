@@ -1,13 +1,14 @@
-<ul>
-    <li><%= link_to 'Sort by name', pokemons_path(:sort_param => "name"), class: "btn btn-ghost" %></li>
-    <li><%= link_to 'Sort by number', pokemons_path(:sort_param => "number"), class: "btn btn-ghost" %></li>
-    <li><%= link_to 'Sort by attack', pokemons_path(:sort_param => "attack"), class: "btn btn-ghost" %></li>
-    <li><%= link_to 'Sort by defense', pokemons_path(:sort_param => "defense"), class: "btn btn-ghost" %></li>
-    <li><%= link_to 'Sort by speed', pokemons_path(:sort_param => "speed"), class: "btn btn-ghost" %></li>
-    <li><%= link_to 'Sort by total', pokemons_path(:sort_param => "total"), class: "btn btn-ghost" %></li>
-    <li><%= link_to 'Sort by HP', pokemons_path(:sort_param => "hp"), class: "btn btn-ghost" %></li>
-    <li><%= link_to 'Sort by type', pokemons_path(:sort_param => "type_1"), class: "btn btn-ghost" %></li>
-</ul>
+<div class="sort-nav">
+        <span><%= link_to 'Sort by name', pokemons_path(:sort_param => "name"), class: "btn btn-ghost" %></span>
+        <span><%= link_to 'Sort by number', pokemons_path(:sort_param => "number"), class: "btn btn-ghost" %></span>
+        <span><%= link_to 'Sort by attack', pokemons_path(:sort_param => "attack"), class: "btn btn-ghost" %></span>
+        <span><%= link_to 'Sort by defense', pokemons_path(:sort_param => "defense"), class: "btn btn-ghost" %></span>
+        <span><%= link_to 'Sort by speed', pokemons_path(:sort_param => "speed"), class: "btn btn-ghost" %></span>
+        <span><%= link_to 'Sort by total', pokemons_path(:sort_param => "total"), class: "btn btn-ghost" %></span>
+        <span><%= link_to 'Sort by HP', pokemons_path(:sort_param => "hp"), class: "btn btn-ghost" %></span>
+        <span><%= link_to 'Sort by type', pokemons_path(:sort_param => "type_1"), class: "btn btn-ghost" %></span>
+        <span><%= link_to 'Sort by legendary', pokemons_path(:sort_param => "legendary"), class: "btn btn-ghost" %></span>
+</div>
 
 <% @pokemon.each do |pokemon|%>
     <div class="card-product">

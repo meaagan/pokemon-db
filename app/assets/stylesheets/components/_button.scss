@@ -13,6 +13,12 @@
     opacity: 1;
   }
 
-  ul li{
-    display: inline-block; 
+
+  .sort-nav {
+      width: 75%;
+      margin: 0 auto;
+      display:flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
   }
