@@ -1,12 +1,13 @@
 <h1><%= @pokemon.number %> - <%= @pokemon.name %></h1>
 <%= link_to 'Edit Pokemon', edit_pokemon_path(@pokemon) %> <br>
+<%= link_to 'Delete Pokemon', pokemon_path(@pokemon), method: :delete, :data => {:confirm => "Are you sure you want to delete #{@pokemon.name}?"}%>
 
 
 <div class="pokemon-card front">
     <div class="pokemon-inner-card">
         <div>
             <h4>
-                <% if @pokemon.legendary == true %>
+                <% if @pokemon.legendary == "True" %>
                     Legendary
                 <% else %>
                     Basic

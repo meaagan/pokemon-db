@@ -20,12 +20,6 @@ class PokemonsController < ApplicationController
         open_url = open(url).read
         url_parsed = JSON.parse(open_url)
         @pokemon_image = url_parsed["sprites"]["other"]["official-artwork"]["front_default"]
-
-        if @pokemon.legendary
-            "Legendary"
-        else
-            "Basic"
-        end
     end
 
     def create 
@@ -61,6 +55,13 @@ class PokemonsController < ApplicationController
         else
             render :edit
         end
+    end
+
+    def destroy 
+        @pokemon = Pokemon.find(params[:id])
+        @pokemon.destroy
+        
+        redirect_to pokemons_path
     end
 
 
