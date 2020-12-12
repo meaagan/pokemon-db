@@ -5,9 +5,9 @@ class Api::V1::PokemonsController < ApplicationController
         respond_to do |format|
             format.json {
                 render :json => {
-                    :current_page => @pokemons.current_page,
-                    :next_page => @pokemons.next_page,
-                    :previous_page => @pokemons.previous_page,
+                    :current_page => "https://mb-pokedex.herokuapp.com/api/v1/pokemons?page=#{@pokemons.current_page}",
+                    :next_page => "https://mb-pokedex.herokuapp.com/api/v1/pokemons?page=#{@pokemons.next_page}",
+                    :previous_page => "https://mb-pokedex.herokuapp.com/api/v1/pokemons?page=#{@pokemons.previous_page}",
                     :per_page => @pokemons.per_page,
                     :total_pokemon => @pokemons.total_entries,
                     :pokemon => @pokemons
