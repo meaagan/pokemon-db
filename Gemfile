@@ -3,10 +3,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
-gem 'will_paginate', '~> 3.1.0'
+# avoid CORS policy error
 gem 'rack-cors', '~> 0.4.0'
+# image hosting
 gem 'cloudinary', '~> 1.16.0'
-
+# API pagination with will_paginate
+gem 'api-pagination'
+gem 'will_paginate', '~> 3.1.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use postgresql as the database for Active Record

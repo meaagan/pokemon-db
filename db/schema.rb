@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2020_12_08_171000) do
   enable_extension "plpgsql"
 
   create_table "pokemons", force: :cascade do |t|
+    t.string "name"
     t.integer "number"
     t.string "type_1"
     t.string "type_2"
@@ -30,7 +31,6 @@ ActiveRecord::Schema.define(version: 2020_12_08_171000) do
     t.string "legendary"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "name"
   end
 
 end
