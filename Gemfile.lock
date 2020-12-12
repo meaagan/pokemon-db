@@ -139,6 +139,7 @@ GEM
     puma (4.3.7)
       nio4r (~> 2.0)
     rack (2.2.3)
+    rack-cors (0.4.1)
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
@@ -257,6 +258,7 @@ DEPENDENCIES
   pry-byebug
   pry-rails
   puma (~> 4.1)
+  rack-cors (~> 0.4.0)
   rails (~> 6.0.3, >= 6.0.3.4)
   sass-rails (>= 6)
   selenium-webdriver
