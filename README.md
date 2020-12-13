@@ -1,3 +1,7 @@
+https://mb-pokedex.herokuapp.com/
+
+API: https://mb-pokedex.herokuapp.com/api/v1/pokemons
+
 # How to
 
 Fork/clone project and run 
