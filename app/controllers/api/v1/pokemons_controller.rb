@@ -1,4 +1,5 @@
 class Api::V1::PokemonsController < ApplicationController
+    skip_before_action :verify_authenticity_token
     # GET /pokemons
     def index
         @pokemons = Pokemon.paginate :page => params[:page]
