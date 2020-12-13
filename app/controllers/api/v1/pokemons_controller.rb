@@ -35,6 +35,12 @@ class Api::V1::PokemonsController < ApplicationController
     # POST /api/v1/pokemons
     def create 
         @pokemon = Pokemon.new(pokemon_params)
+        
+        # Calculate total for new Pokemon 
+        @pokemon.total = @pokemon.hp.to_i + @pokemon.attack.to_i + @pokemon.defense.to_i + @pokemon.sp_atk.to_i + @pokemon.sp_def.to_i + @pokemon.speed.to_i
+
+        # Automatically add new Pokemon to end of list
+        @pokemon.number = Pokemon.last.number.to_i + 1
     
         if @pokemon.save
             render :show, status: :created
