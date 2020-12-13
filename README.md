@@ -1,6 +1,6 @@
 https://mb-pokedex.herokuapp.com/
 
-API: https://mb-pokedex.herokuapp.com/api/v1/pokemons?page=1
+API: https://mb-pokedex.herokuapp.com/api/v1/pokemons
 
 # How to
 
