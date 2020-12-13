@@ -1,4 +1,7 @@
+
 class Api::V1::PokemonsController < ApplicationController
+
+    # GET /pokemons
     def index
         @pokemons = Pokemon.paginate :page => params[:page]
 
@@ -16,25 +19,47 @@ class Api::V1::PokemonsController < ApplicationController
         end
     end
 
+    # GET /pokemons/[:id]
     def show
         @pokemon = Pokemon.find(params[:id])
     end
 
+    # PATCH /pokemons/[:id]
     def update
         if @pokemon.update(pokemon_params)
-            render :show
+            render status: :ok,
+                json: @pokemon
         else
-            render_error
+            render status: :unprocessable_entity,
+                json: {
+                    errors: [
+                        {
+                            status: 'Update failed',
+                            message: "An error occurred while updating Pokemon with id: #{params[:id]}.",
+                            data: pokemon_params,
+                        }
+                    ]
+                }
         end
     end
 
     def create 
         @pokemon = Pokemon.new(pokemon_params)
-       
+    
         if @pokemon.save
-            render :show, status: :created
+            render status: :created,
+                json: @pokemon
         else
-            render_error
+            render status: :unprocessable_entity,
+                json: {
+                    errors: [
+                    {
+                        status: 'Create failed',
+                        message: 'An error occurred while creating a new Pokemon.',
+                        data: pokemon_params,
+                    }
+                    ]
+                }
         end
     end
 
